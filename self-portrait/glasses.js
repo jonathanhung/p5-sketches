@@ -1,7 +1,11 @@
 var eye = {
-	x: 0,
-	y: 200,
-	diameter: 50
+	width: 58,
+  height: 27
+}
+
+var iris = {
+  width: 32,
+  height: 15
 }
 
 function setup() {
@@ -15,7 +19,17 @@ function draw() {
   // ellipse, line, arc, point
 
 
-  // face
-  ellipse(200, 100, circle1.diameter);
-  
+  // head
+  ellipseMode(CORNER);
+  fill(240,224,175);
+  ellipse(310, 225, 183, 183);
+ 
+  // eyes
+  fill(255);
+  ellipse(339, 290, eye.width, eye.height);
+  ellipse(418, 290, eye.width, eye.height); 
+
+  fill(97);
+  ellipse(360, 288, iris.width, iris.height);
+  ellipse(440, 288, iris.width, iris.height); 
 }
