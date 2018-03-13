@@ -4,8 +4,8 @@ var eye = {
 }
 
 var iris = {
-  width: 32,
-  height: 15
+  width: 15,
+  height: 32
 }
 
 function setup() {
@@ -21,6 +21,7 @@ function draw() {
 
   // head
   ellipseMode(CORNER);
+  strokeWeight(0);
   fill(240,224,175);
   ellipse(310, 225, 183, 183);
  
