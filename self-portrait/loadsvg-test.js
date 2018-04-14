@@ -15,7 +15,7 @@ function pic(x,y) {
 function setup() {
   // put setup code here
   createCanvas(windowWidth, windowHeight);
-	var icecream = newpic(200,200);
+	var icecream = new pic(200,200);
 	icecream.display();
 }
 
