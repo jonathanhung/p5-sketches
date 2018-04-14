@@ -5,8 +5,7 @@ let moveVal = 5;
 function setup() {
   // put setup code here
   createCanvas(windowWidth, windowHeight);
-  frameRate(30);
-  for (i = 0; i <= 20; i++) { 
+  for (i = 0; i <= 20; i++) {
       let b = new Bubble(300, 300, random(10,100));
       bubbles.push(b);
   }
@@ -28,7 +27,7 @@ function newBub() {
 }
 
 // function mousePressed() {
-//   for (i = 0; i <= 5; i++) { 
+//   for (i = 0; i <= 5; i++) {
 //     bubbles[i].click(mouseX, mouseY);
 //   }
 // }
@@ -42,8 +41,8 @@ function newBub() {
 
 function draw() {
   background(240);
-  
-  for (let i = 0; i < bubbles.length ; i++) { 
+
+  for (let i = 0; i < bubbles.length ; i++) {
 
       var distance = dist(mouseX, mouseY, bubbles[i].x, bubbles[i].y);
 
@@ -67,15 +66,15 @@ function draw() {
   }
   // circle1.x = circle1.x + 3;
   // ellipse(circle1.x, circle1.y, circle1.diameter);
-  
+
 }
 
 
 
 function mousePressed() {
-  for (let i = 0; i < bubbles.length ; i++) { 
+  for (let i = 0; i < bubbles.length ; i++) {
       bubbles[i].clicked(mouseX, mouseY);
-  }    
+  }
 }
 
 
@@ -93,7 +92,7 @@ class Bubble{
 
   move() {
     this.x = this.x + random((moveVal * -1), moveVal);
-    this.y = this.y + random((moveVal * -1), moveVal);  
+    this.y = this.y + random((moveVal * -1), moveVal);
   }
 
 
@@ -118,7 +117,7 @@ class Bubble{
   }
 
   dull() {
-    this.highlight = color(0, 0, 0); 
+    this.highlight = color(0, 0, 0);
     strokeWeight(1);
   }
 
