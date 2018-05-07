@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1020px" height="600px" viewBox="0 0 1020 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #DCDCDC;">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="outer" fill="#DCAC00" x="65" y="65" width="890" height="470"></rect>
+        <rect id="inner" stroke="#979797" x="115.5" y="109.5" width="789" height="381"></rect>
+        <polygon id="side-a" stroke="#979797" points="116 173 116 490 202 447.355075 202 193.926241"></polygon>
+        <polygon id="wall-a" stroke="#979797" points="202 194 465 257.857951 465 382.280398 380.524698 361.571396 202 448"></polygon>
+        <polygon id="core" stroke="#979797" points="465 257.344842 555.67226 217 555.67226 340.561824 465 382.222358"></polygon>
+        <polygon id="roof-a" stroke="#979797" points="202.373047 130.632812 202.373047 193.984375 464.798828 257.488281 555.439453 216.75"></polygon>
+        <polygon id="wall-b" stroke="#979797" points="555.457031 217.072266 639.421875 237.332031 817.822266 150.792969 818.822266 407.207031 555.457031 340.203125"></polygon>
+        <polygon id="side-b" stroke="#979797" points="904.595703 110.181641 818.365234 150.8125 818.365234 407.214844 904.595703 428.720703"></polygon>
+        <polygon id="roof-b" stroke="#979797" points="735.046875 129.4375 555.143204 216.43169 639.387158 237.025111 818.12827 150.58271"></polygon>
+        <polygon id="floor-a" stroke="#979797" points="202.518241 447.594073 282.433793 470.91989 464.546203 382.526307 380.512384 361.438728"></polygon>
+        <polygon id="floor-b" stroke="#979797" points="465.080078 382.487386 818.247703 469.153366 818.247703 406.707308 555.190861 340.460254"></polygon>
+    </g>
+</svg>

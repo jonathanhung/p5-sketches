@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <style> body {padding: 0; margin: 0;} </style>
+
+    <link rel="stylesheet" href="ScrollMagic/css/normalize.css" type="text/css">
+	  <link rel="stylesheet" href="ScrollMagic/css/style.css" type="text/css">
+	  <link rel="stylesheet" href="ScrollMagic/css/examples.css" type="text/css">
+    <script type="text/javascript" src="ScrollMagic/js/lib/jquery.min.js"></script>
+	  <script type="text/javascript" src="ScrollMagic/js/lib/highlight.pack.js"></script>
+	  <script type="text/javascript" src="ScrollMagic/js/lib/modernizr.custom.min.js"></script>
+	  <script type="text/javascript" src="ScrollMagic/js/examples.js"></script>
+    <script src="ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+
+
+    <style type="text/css">
+    	.panel {
+    		height: 100%;
+    		width: 100%;
+    	}
+    	.panel.green {
+    		margin-bottom: 400px
+    	}
+
+      .panel.first {
+          background-image: url("scroll-bottom.png");
+          background-repeat: no-repeat;
+      }
+      .panel.second {
+          background-image: url("scroll-top.png");
+          background-repeat: no-repeat;
+      }
+      </style>
+  </head>
+  <body>
+      <section class="panel first">
+      	<b>ONE</b>
+      </section>
+      <section class="panel second">
+      	<b>TWO</b>
+      </section>
+      <section class="panel white">
+        <img src="rotate.png" style="margin:none;">
+        <img src="rotate.png" id="rotate-me" style="margin-top:-100%;">
+
+        Rotate: <br>
+        <input type="range" min="-360" max="360" value="7" oninput="rotate(this.value)" onchange="rotate(this.value)" /><br>
+        I am rotating by (<span id="span1">7deg</span>);
+
+      </section>
+      <section class="panel bordeaux">
+      	<b>FOUR</b>
+      </section>
+      <script>
+
+      function rotate(value) {
+        document.getElementById('rotate-me').style.webkitTransform="rotate(" + value + "deg)";
+        document.getElementById('rotate-me').style.msTransform="rotate(" + value + "deg)";
+        document.getElementById('rotate-me').style.MozTransform="rotate(" + value + "deg)";
+        document.getElementById('rotate-me').style.OTransform="rotate(" + value + "deg)";
+        document.getElementById('rotate-me').style.transform="rotate(" + value + "deg)";
+        document.getElementById('span1').innerHTML=value + "deg";
+        }
+
+      	$(function () { // wait for document ready
+      		// init
+      		var controller = new ScrollMagic.Controller({
+      			globalSceneOptions: {
+      				triggerHook: 'onLeave'
+      			}
+      		});
+
+      		// get all slides
+      		var slides = document.querySelectorAll("section.panel");
+
+      		// create scene for every slide
+      		for (var i=0; i<slides.length; i++) {
+      			new ScrollMagic.Scene({
+      					triggerElement: slides[i]
+      				})
+      				.setPin(slides[i])
+      				// .addIndicators() // add indicators (requires plugin)
+      				.addTo(controller);
+      		}
+      	});
+      </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <style>
+
+      body {padding: 0; margin: 0;}
+
+      div.albers {
+        position:fixed;
+        top:50px;
+      }
+
+      .scene, .intro {
+        height: 1600px;
+      }
+
+      .ending {
+        margin-bottom: 1000px;
+      }
+
+      #trigger-1 {
+        background-color: magenta;
+      }
+
+    </style>
+    <!-- <script src="../p5.min.js"></script>
+    <script src="../addons/p5.dom.min.js"></script>
+    <script src="../addons/p5.sound.min.js"></script> -->
+
+    <script src="minified/ScrollMagic.min.js"></script>
+    <script src="snap.svg-min.js"></script>
+    <script src="minified/plugins/debug.addIndicators.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="albers"></div>
+    <div id="controls">
+      <input type="range" min="-1000" max="1000" id="y-pos" oninput="move('side-a',this.value)" onchange="move('side-a',this.value)">100</input>
+      <input type="button" onclick="moveArray(sceneObjects[0], 50)" value="move 50"></input>
+    </div>
+    <div class="intro"></div>
+    <div class="scene"></div>
+    <div class="scene" id="trigger-1">I've got content</div>
+    <div class="scene"></div>
+    <div class="scene ending"></div>
+
+    <!-- <script src="albers-svg.js"></script> -->
+    <script src="scrolling-test.js"></script>
+
+  </body>
+</html>

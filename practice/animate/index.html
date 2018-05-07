@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <style> body {padding: 0; margin: 0;} </style>
+
+    <!-- importing scroll Magic libraries -->
+
+    <link rel="stylesheet" href="ScrollMagic/css/normalize.css" type="text/css">
+	  <link rel="stylesheet" href="ScrollMagic/css/style.css" type="text/css">
+	  <link rel="stylesheet" href="ScrollMagic/css/examples.css" type="text/css">
+    <script type="text/javascript" src="ScrollMagic/js/lib/jquery.min.js"></script>
+	  <script type="text/javascript" src="ScrollMagic/js/lib/highlight.pack.js"></script>
+	  <script type="text/javascript" src="ScrollMagic/js/lib/modernizr.custom.min.js"></script>
+	  <script type="text/javascript" src="ScrollMagic/js/examples.js"></script>
+    <script src="ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+
+    <!-- importing p5 -->
+    <script src="../../p5.js"></script>
+
+    <!-- importing my own javascript -->
+    <script src="myAnimate.js"></script>
+
+
+    <style type="text/css">
+    	.panel {
+    		height: 100%;
+    		width: 100%;
+    	}
+    	.panel.green {
+    		margin-bottom: 400px
+    	}
+
+
+      </style>
+  </head>
+  <body>
+      <section class="panel first">
+      	<b>Our brain can easily be tricked into interpreting information incorrectly.</b>
+      </section>
+      <section class="panel second">
+      	<p>What we perceive as </p>
+        <p><b>objective stimuli</b></p>
+        <p>is actually colored by </p>
+        <p><b>contextual information.</b></p>
+      </section>
+      <section class="panel white">
+        <div id="canvasSection"></div>
+      </section>
+      <section class="panel bordeaux">
+      	<b>FOUR</b>
+      </section>
+      <script>
+
+
+
+      	$(function () { // wait for document ready
+      		// init
+      		var controller = new ScrollMagic.Controller({
+      			globalSceneOptions: {
+      				triggerHook: 'onLeave'
+      			}
+      		});
+
+      		// get all slides
+      		var slides = document.querySelectorAll("section.panel");
+
+      		// create scene for every slide
+      		for (var i=0; i<slides.length; i++) {
+      			new ScrollMagic.Scene({
+      					triggerElement: slides[i]
+      				})
+      				.setPin(slides[i])
+      				// .addIndicators() // add indicators (requires plugin)
+      				.addTo(controller);
+      		}
+      	});
+      </script>
+  </body>
+</html>
