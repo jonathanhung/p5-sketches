@@ -45,18 +45,26 @@ var dur = 1600;
 //               .on("end", function (e) {
 //                 console.log("I am ending");
 //               })
+//               .on("progress", function(e) {
+//                 console.log("current progress: " + this.progress());
+//                 move('side-a', (this.progress() * 600));
+//               })
 //               .addIndicators()
 //               .duration(dur)
 //               .addTo(controller);
 
-// loop through triggers to bind hello world function
 
-for (var i=0; i<triggers.length; i++) {
+// loop through triggers to bind hello world function
+var count = 0;
+
+for (var i=0; i < triggers.length ; i++) {
+        console.log(i);
+        var target = sceneObjects[count];
         new ScrollMagic.Scene({
                   triggerElement: triggers[i]
                 })
               .on("enter", function (e) {
-                console.log("I am entering region " + i);
+                console.log("I am entering");
               })
               .on("leave", function (e) {
                 console.log("I am leaving");
@@ -64,9 +72,15 @@ for (var i=0; i<triggers.length; i++) {
               .on("end", function (e) {
                 console.log("I am ending");
               })
+              .on("progress", function(e) {
+                console.log("current progress: " + this.progress());
+                moveArray(target, (this.progress() * 600));
+              })
               .addIndicators()
               .duration(dur)
               .addTo(controller);
+        count++;
+}
 
           // new ScrollMagic.Scene({
           //           triggerElement: triggers[1]
@@ -83,7 +97,7 @@ for (var i=0; i<triggers.length; i++) {
           //       .addIndicators()
           //       .duration(dur)
           //       .addTo(controller);
-}
+
 
 
 
