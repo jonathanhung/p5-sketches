@@ -36,6 +36,22 @@ function draw() {
   //     text(scores[i], 200 + (400* (i % 2)), 200 + (400 * (i %2)));
   //   }
 
+// Vehicle stuff
+
+  var v = new Vehicle(800/2, 600/2);
+  var mouse = new PVector(mouseX, mouseY);
+
+  // Draw an ellipse at the mouse position
+  fill(200);
+  stroke(0);
+  strokeWeight(2);
+  ellipse(mouse.x, mouse.y, 48, 48);
+
+  // Call the appropriate steering behaviors for our agents
+  v.seek(mouse);
+  v.update();
+  v.display();
+
 }
 
 
